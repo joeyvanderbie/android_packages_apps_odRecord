@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2012 The OpenDESIGN Project
+ * Copyright (C) 2014 The Amsterdam University of Applied Sciences
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -7,7 +7,7 @@
  *     http://www.apache.org/licenses/LICENSE-2.0
  */
 
-package com.opendesign.record;
+package org.hva.sensei.record;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -31,7 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-public class OdRecordActivity extends Activity {
+public class RecordActivity extends Activity {
     private AudioRecorder mRecorder = null;
     private Timer mUiTimer = null;
     private long mRecordingStartTime = 0;
@@ -94,7 +94,8 @@ public class OdRecordActivity extends Activity {
 
             Intent sharingIntent = new Intent(
                     android.content.Intent.ACTION_SEND);
-            sharingIntent.setType("audio/3gpp");
+//            sharingIntent.setType("audio/3gp");
+            sharingIntent.setType("audio/wav");
             sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,
                     getResources().getString(R.string.share_title));
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT,
@@ -154,7 +155,8 @@ public class OdRecordActivity extends Activity {
             // prepare recording
             SimpleDateFormat fileNameDate = new SimpleDateFormat();
             fileNameDate.applyPattern("yyyy-MM-dd HH.mm.ss");
-            mLastFileName = fileNameDate.format(new Date()) + ".3gp";
+//            mLastFileName = fileNameDate.format(new Date()) + ".3gp";
+            mLastFileName = fileNameDate.format(new Date()) + ".wav";
             mRecorder = new AudioRecorder(mLastFileName);
 
             // start recording

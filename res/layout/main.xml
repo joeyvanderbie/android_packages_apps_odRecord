@@ -39,7 +39,7 @@
             android:layout_centerHorizontal="true"
             android:visibility="gone"/>
         
-        <com.opendesign.record.VuMeterView
+        <org.hva.sensei.record.VuMeterView
             android:id="@+id/vuMeterView"
             android:layout_width="fill_parent"
             android:layout_height="30dip"

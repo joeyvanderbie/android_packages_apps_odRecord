@@ -1,12 +1,12 @@
 /**
- * Copyright (C) 2012 The OpenDESIGN Project
+ * Copyright (C) 2014 The Amsterdam University of Applied Sciences
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *     http://www.apache.org/licenses/LICENSE-2.0
  */
-package com.opendesign.record;
+package org.hva.sensei.record;
 
 import java.io.File;
 import java.io.IOException;
@@ -38,7 +38,8 @@ public class AudioRecorder {
             path = "/" + path;
         }
         if (!path.contains(".")) {
-            path += ".3gp";
+//            path += ".3gp";
+            path += ".wav";
         }
         return Environment.getExternalStorageDirectory().getAbsolutePath()
                 + "/Recording" + path;
@@ -61,8 +62,10 @@ public class AudioRecorder {
         }
 
         recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+//        recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+//        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+        recorder.setOutputFormat(MediaRecorder.OutputFormat.AMR_WB);
+        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB);
         recorder.setOutputFile(path);
         recorder.prepare();
         recorder.start();

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">odRecord</string>
+    <string name="app_name">Sensei Recorder</string>
     <string name="menu_share">Share</string>
     <string name="menu_list">List recordings</string>
     <string name="ui_default_timer">--:--</string>

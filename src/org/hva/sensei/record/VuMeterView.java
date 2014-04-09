@@ -7,7 +7,7 @@
  *     http://www.apache.org/licenses/LICENSE-2.0
  */
 
-package com.opendesign.record;
+package org.hva.sensei.record;
 
 import android.content.Context;
 import android.graphics.Canvas;
